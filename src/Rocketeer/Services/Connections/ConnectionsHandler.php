@@ -387,6 +387,7 @@ class ConnectionsHandler
     {
         $config      = (array) $this->rocketeer->getOption('scm');
         $credentials = (array) $this->localStorage->get('credentials');
+        unset($credentials['repository']);
 
         return array_merge($config, $credentials);
     }
